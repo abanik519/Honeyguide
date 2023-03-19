@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
+    <script src="main.js"></script>
+    <body>
+        <!-- Slideshow container -->
+<div class="slideshow-container">
+    <audio id="success">
+      <source src="/sounds/success.wav">
+    </audio>
+    <audio id="failure">
+      <source src="/sounds/failure.wav">
+    </audio>
+
+    <!-- Full-width images with number and caption text -->
+    <!-- Intro slide -->
+    <div class="mySlides fade" style="display: block;">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <audio id="2.T">
+          <source src="/sounds/MCOG-2/2.T.mp3">
+        </audio> 
+        <img class="pic" src="/images/Cover.jpg">
+        <img class="avatar"  src="/images/Avatar.png">
+        <i id="click1" class="fa fa-arrow-right" style="display: none;"></i>
+        <div style="width: 37%;margin-left: 50%; margin-top: 5vw; height: 20vw; position: absolute; float: right; vertical-align: middle; text-align: center;">
+          <input placeholder="Enter Name" id="name" style="vertical-align: middle; border-top: hidden; 
+          border-left: hidden; border-right: hidden; text-align: center; position: relative;
+           height: 5vh; width: 60%; margin-top: 20vh; font-size: 200%; outline: none;">
+           <br>
+           <br>
+           <button style="width: 40%; height: 3vw; font-size: 120%; cursor: pointer;"  onclick="show('intro'); showNext();">Press to Begin</button>
+        </div>
+        <div id="intro" style="width: 35vw; display: none;" class="speech sb1">
+          In this story "The Honeyguide's Revenge," Gingele gets honeycomb out of a hive.&nbsp;He uses a smoking stick to calm the bees first.&nbsp;How does the smoking stick work? 
+          &nbsp;When there is smoke the bees cannot detect alarm signals that would normally cause them to attack an intruder.&nbsp;Smoke also makes them think there is a forest fire so 
+          they eat a lot of honey before leaving their hive to look for a new home.&nbsp;It is hard for them to sting when they are full of honey. 
+
+        </div>
+
+      </div>
+    </div>
+  
+    <!-- Second slide -->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s1.jpg">
+       <audio id="2.A">
+          <source src="/sounds/2.A.mp3">
+        </audio> 
+        <audio id="2.B">
+            <source src="/sounds/2.B.mp3">
+        </audio>
+        <img id="firstAvatar" class="avatar" src="/images/Avatar.png">
+        <i id="click2" class="fa fa-arrow-right" style="display: none;"></i>
+        
+        <div id="NgedeDef" class="dictionary" style="width:300px;">
+          <span id="ŋ" style= "background-color:lightgrey;">N </span>
+          <span id="ɡe" style= "background-color:lightgrey;"> ge </span>
+          <span id="de" style= "background-color:lightgrey;"> de </span> <br>
+          <span id="ŋɡede" style= "background-color:lightgrey;"> Ngede  </span>
+          <span id="Check1" class="success-checkmark2" style="display: none;" onclick="show('GingileDef'); highlight('Gingile_word'); unhighlight('Ngede_word'); hide('Ngede'); play('2.B'); highlightGingile(); hide('NgedeDef');"></span>
+          <div class="bubble3"></div>
+          <div class="bubble4"></div>
+        </div>
+        <div id="GingileDef" class="dictionary" style="width:300px;">
+          <span id="ɡɪŋ" style= "background-color:lightgrey;">Gin </span>
+          <span id="ɡi" style= "background-color:lightgrey;"> gi </span>
+          <span id="le" style= "background-color:lightgrey;"> le </span> <br>
+          <span id="ɡɪŋɡele" style= "background-color:lightgrey;"> Gingile  </span>
+          <span id="Check2" class="success-checkmark2" style="display: none;" onclick="hide('GingileDef'); hide('Check2'); showNext(); unhighlight('Gingile_word'); "></span>
+          <div class="bubble3"></div>
+          <div class="bubble4"></div>
+        </div>
+        <div class="words">Today you will read the story of The Honey Guide. This is the story of 
+          <span id="Ngede_word" style="background-color: yellow">Ngede</span>, the Honeyguide, and a greedy
+           young man named <span id="Gingile_word" style="background-color: yellow">Gingile</span>.
+        <span id="showPronunciation" class="success-checkmark" style="display:inline-block;" onclick="highlight('Ngede_word'); show('NgedeDef'); play('2.A'); highlightNgede(); hide('showPronunciation');"></span>
+        </div>
+        
+        <audio src="/sounds/success.wav"></audio>
+        <audio src="/sounds/failure.wav"></audio>
+        <audio src="/sounds/error.mp3"></audio>
+        <div id="Ngede"style="width: 5%; height: 5vw; background-color: transparent; margin-left: 36%; margin-top: 10vh; cursor: pointer; position: absolute;" onclick="clickNgede()"></div>
+        <div id="Gingile" style="width: 8%; height: 20vw; margin-top: 10vw; margin-left: 26vw; cursor: pointer; background-color: transparent; position: absolute;" onclick="clickG()"></div>
+      </div>
+    </div>
+  
+    <!-- Third slide -->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s1.jpg">
+        <audio id="2.1">
+          <source src="/sounds/MCOG-2/2.1.mp3">
+        </audio> 
+        <img class="avatar"  src="/images/Avatar.png">
+        <div id="chitik" class="multiple" style="margin-left: 10vw; margin-top: 1vw; height: 25vw; display: none;">
+          Why does Gingele's mouth water when he hear's the little bird's call "chitik-chitik-chitik"?<br>
+          <br><span class="choice" onclick="success(); showNext(); hide('chitik'); hide('hideThird')">(a) He knew the bird would lead him to honey</span>
+          <br><span class="choice" onclick="failure();">(b) When he saw the bird in the branches, he also saw the bee hive</span>
+          <br><span class="choice" onclick="failure();">(c) He was not successful in his hunting and was getting hungry</span>
+        </div>
+        <div class="words">One day while Gingile was out hunting he heard the call of Ngede. Gingile’s mouth began to water at the thought of honey. He stopped and listened carefully, 
+          searching until he saw the bird in the branches above his head. “Chitik-chitik-chitik,” the little bird rattled, as he flew to the next tree, and the next. 
+          <span id="chitik_word">“Chitik, chitik, chitik,”</span> he called, stopping from time to time to be sure that Gingile followed.
+         <span id="showThird" class="success-checkmark" style="display: inline-block;" onclick="show('chitik'); hide('showThird'); highlight('chitik_word');"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fourth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <audio id="2.2">
+          <source src="/sounds/MCOG-2/2.2.mp3">
+        </audio> 
+        <img class="pic" src="/images/s2.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+
+        <div id="trusted" class="dictionary" style="margin-top: -2vw; width: 30vw;">  
+          <b style="background-color: lightgray;">Trusted (verb)</b> <br>Feels sure that the other character will give truthful or accurate information.
+          <span class="success-checkmark2" onclick="showNext(); hide('trusted')"></span>
+          <div class="bubble3"></div>
+          <div class="bubble4"></div>
+        </div>
+        <div class="words">After half an hour, they reached a huge wild fig tree. Ngede hopped about madly among the branches. He then settled on one branch and cocked his head at Gingile 
+          as if to say, “Here it is! Come now! What is taking you so long?” Gingile couldn’t see any bees from under the tree, but he 
+          <span id="trusted_word" style="background-color: yellow">trusted</span> Ngede.
+          <div id="showDef" class="success-checkmark" style="display: inline-block;" onclick="show('trusted'); hide('showDef'); highlight('trusted_word');"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fifth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <audio id="2.3">
+          <source src="/sounds/MCOG-2/2.3.mp3">
+        </audio> 
+        <img class="pic" src="/images/s3.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        
+        <div id="fourth" style="display: none; top: 50px;" class="speechQ sb2">Do you remember why Gingile needs a smoking stick?
+          <span class="success-checkmark2" onclick="showNext(); hide('fourth')"></span>
+        </div>
+        <div class="words">So Gingile put down his hunting spear under the tree, gathered some dry twigs and made a small fire. When the fire was burning well, he put a long dry stick
+           into the heart of the fire. This wood was especially known to make lots of smoke while it burned. He began climbing, holding the cool end of the 
+           <span id="stick_word">smoking stick</span> in his teeth.
+           <div id="showQ" class="success-checkmark" style="display: inline-block;" onclick="show('fourth'); hide('showQ');"></div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Sixth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s4.jpg">
+        <audio id="2.4.A">
+          <source src="/sounds/MCOG-2/2.4.A.mp3">
+        </audio> 
+        <audio id="2.4.B">
+          <source src="/sounds/MCOG-2/2.4.B.mp3">
+        </audio> 
+        <img class="avatar" src="/images/Avatar.png">
+    
+        <div id="hive" class="multiple arrow" style="display: none; height: 22vw; width: auto; margin-left: 40vw; margin-top: 15vw;">
+          Where did Gingile find the bees? <br> <span style="font-size: 3vw; background-color: whitesmoke;">(Click the correct picture)</span> <br><br>
+          <img class="multImg" onclick="failure()" src="images/q1.PNG">
+          <img class="multImg" onclick="failure()" src="images/q2.PNG">
+          <img class="multImg" onclick="failure()" src="images/q3.PNG">
+          <img class="multImg" onclick="hide('hive'); showNext();" src="images/q4.PNG">
+        </div>
+        <div class="words">Soon he could hear the loud buzzing of the busy bees. They were coming in and out of a hollow in the tree trunk – their 
+          <span id="hive_word">hive</span>. 
+          When Gingile reached the hive he pushed the smoking end of the stick into the hollow. The bees came rushing out, angry and mean. They flew away because they didn’t 
+          like the smoke – but not before they had given Gingile some painful stings!
+          <div id="showQ6" class="success-checkmark" style="display: inline-block;" onclick="show('hive'); hide('showQ6');"></div>
+        </div>
+      </div>
+    </div>
+
+   <!-- Seventh slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s5.jpg">
+        <audio id="2.5">
+          <source src="/sounds/MCOG-2/2.5.mp3">
+        </audio> 
+     
+        <img class="avatar" src="/images/Avatar.png">
+        <div id="grubs" class="dictionary" style="margin-top: -6vw; width: 42vw;">
+          <b style="background-color: lightgray;"> Grub (noun)</b> <br>Soft, worm-like larva of an insect. The larva is the first form that hatches from the egg. It undergoes several transformations before becoming the adult form of the insect.
+          <span class="success-checkmark2" onclick="showNext(); hide('grubs')"></span>
+          <div class="bubble3"></div>
+          <div class="bubble4"></div>
+        </div>
+        <div class="words">When the bees were out, Gingile pushed his hands into the nest. He took out handfuls of the heavy comb, dripping with rich honey and full of fat, 
+          white <span id="grub_word" style="background-color: yellow">grubs</span>. 
+          He put the comb carefully in the pouch he carried on his shoulder, and started to climb down the tree.
+          <div id="showQ7" class="success-checkmark" style="display: inline-block;" onclick="show('grubs'); hide('showQ7'); highlight('grub_word'); "></div>
+        </div>
+      </div>
+    </div>
+
+
+     <!-- Eight slide-->
+     <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s6.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        <audio id="2.6">
+          <source src="/sounds/MCOG-2/2.6.mp3">
+        </audio> 
+
+        <div id="perched" class="dictionary" style="width: 35vw; margin-top: -3vw;">
+          <b style="background-color: lightgray;">Perch (verb, present tense) or Perched (past tense)</b> <br>To rest on the edge of something or high up.
+          <span class="success-checkmark2" onclick=" showNext(); hide('perched')"></span>
+          <div class="bubble3"></div>
+          <div class="bubble4"></div>
+        </div>
+        <div class="words">Ngede eagerly watched everything that Gingile was doing. He was waiting for him to leave a fat piece of honeycomb as a thank-you offering to the Honeyguide. 
+          Ngede flittered from branch to branch, closer and closer to the ground. Finally Gingile reached the bottom of the tree. 
+          Ngede <span id="perched_word" style="background-color: yellow;">perched</span> on a rock near the boy and waited for his reward.
+          <div id="showQ8" class="success-checkmark" style="display: inline-block;" onclick="show('perched'); hide('showQ8'); highlight('perched_word'); "></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ninth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s7.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        <audio id="2.7">
+          <source src="/sounds/MCOG-2/2.7.mp3">
+        </audio> 
+   
+        <div id="eight" style="display: none; width: 20vw;" class="speechQ sb2">
+          Do you remember how Ngede gets his revenge?
+          <span class="success-checkmark2" onclick="showNext(); hide('eight')"></span>
+        </div>
+        <div class="words">But, Gingile put out the fire, picked up his spear and started walking home, ignoring the bird. Ngede called out angrily, “VIC-torr! VIC-torrr!” Gingile stopped, 
+          stared at the little bird and laughed aloud. “You want some honey, do you, my friend? Ha! But I did all the work, and got all the stings. Why should I share any of this lovely 
+          honey with you?” Then he walked off. Ngede was furious! This was no way to treat him! But he would get his <span id="revenge_word">revenge</span>.
+          <div id="showQ9" class="success-checkmark" style="display: inline-block;" onclick="show('eight'); hide('showQ9');"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tenth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s8.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        <audio id="2.8">
+          <source src="/sounds/MCOG-2/2.8.mp3">
+        </audio> 
+
+       <form onsubmit="success(); showNext(); hide('delicious'); unhighlight('delicious_word'); return false;">
+        <div id="delicious" class="multiple arrow" style="margin-left: 6vw; height: 12vw; margin-top: 11vw; display: none;">
+          Gingele remembered the delicious honey. What is a synonym for delicious? Fill in the blank in this sentence: Gingele remembered the 
+          <input style="width: 15vw; height: 3vw; font-size: 2vw;border-top: hidden; border-left: hidden; border-right: hidden; 
+          background-color:  whitesmoke; text-align: center; outline: none; "required placeholder="Enter Answer">
+          honey.
+          <input id="submit1" type="submit" style="background-color: greenyellow; font-size:1.5vw;" value="Continue"></span>
+        </div>
+        </form>
+        <div class="words">One day several weeks later Gingile again heard the honey call of Ngede. He remembered the <span id="delicious_word" style="background-color: yellow">delicious</span> honey, and eagerly followed the bird once again. 
+          After leading Gingile along the edge of the forest, Ngede stopped to rest in a great umbrella thorn. “Ahh,” thought Gingile. “The hive must be in this tree.”
+          He quickly made his small fire and began to climb, the smoking branch in his teeth. Ngede sat and watched.
+          <div id="showQ10" class="success-checkmark" style="display: inline-block;" onclick="show('delicious'); hide('showQ10');"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eleventh slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s9.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        <audio id="2.9">
+          <source src="/sounds/MCOG-2/2.9.mp3">
+        </audio> 
+        
+       <form onsubmit="success(); showNext(); hide('sharp'); return false; hide('hideQ11');">
+        <div id="sharp" class="multiple" style="margin-left: 45vw; height: 15vw; margin-top: 20vw; display: none;">
+          Look at the picture. The leopard looks very surprised and angry.  The leopard revealed sharp
+          <input style="width: 15vw; height: 3vw; font-size: 2vw;border-top: hidden; border-left: hidden; border-right: hidden; 
+          background-color:  whitesmoke; text-align: center; outline: none;" required placeholder="Enter Answer">
+          and sharp
+          <input style="width: 15vw; height: 3vw; font-size: 2vw;border-top: hidden; border-left: hidden; border-right: hidden; 
+          background-color:  whitesmoke; text-align: center; outline: none;" required placeholder="Enter Answer">
+          .
+          <input id="submit2" type="submit" style="background-color: greenyellow; font-size:1.5vw;" value="Continue"></span>
+        </div>
+        </form>
+        <div class="words">Gingile climbed, wondering why he didn’t hear the usual buzzing. “Perhaps the hive is deep in the tree,” he thought to himself. He pulled himself up another branch.
+          But instead of the hive, he was staring into the face of a leopard! Leopard was very angry at having her sleep so rudely interrupted. She narrowed her eyes, opened her 
+          mouth to reveal her very large and very <span id="sharp_word">sharp</span> teeth.
+         <div id="showQ11" class="success-checkmark" style="display: inline-block;" onclick="show('sharp'); hide('showQ11');"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Twelfth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s10.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        <audio id="2.10">
+          <source src="/sounds/MCOG-2/2.10.mp3">
+        </audio> 
+  
+        <div id="lesson" class="multiple arrow2" style="margin-left: 45vw; margin-top: 15vw; height: 20vw; display: none;">
+          What lesson did Gingele learn?<br>
+          <br><span class="choice" onclick="success(); showNext(); hide('lesson')">(a) Gingele learned that he should share honey with the honeyguide.</span>
+          <br><span class="choice" onclick="failure();">(b) Gingele learned to stay out of the umbrella thorn tree.</span>
+          <br><span class="choice" onclick="failure()">(c) Gingele learned to not trust Ngede.</span>
+        </div>
+        <div class="words">Before Leopard could take a swipe at Gingile, he rushed down the tree. In his hurry he missed a branch, and landed with a heavy thud on the ground twisting his 
+          ankle. He hobbled off as fast as he could. Luckily for him, Leopard was still too sleepy to chase him. Ngede, the Honeyguide, had his revenge. And Gingile learned his
+          <span id="lesson_word">lesson</span>.
+          <div id="showQ12" class="success-checkmark" style="display: inline-block;" onclick="show('lesson'); hide('showQ12');"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thirteenth slide-->
+    <div class="mySlides fade">
+      <div class="slide">
+        <div class="title">The Honeyguide's Revenge</div>
+        <img class="pic" src="/images/s11.jpg">
+        <img class="avatar" src="/images/Avatar.png">
+        <audio id="2.11">
+          <source src="/sounds/MCOG-2/2.11.mp3">
+        </audio> 
+        <div id="harvest" class="dictionary" style="width: 30vw; margin-top: -3vw;">
+          <b style="background-color: lightgray;">Harvest (verb)</b> <br>To gather a crop or natural product for use, usually for eating.
+          <span class="success-checkmark2" onclick="showNext(); hide('harvest')"></span>
+          <div class="bubble3"></div>
+          <div class="bubble4"></div>
+        </div>
+        <div class="words">And so, when the children of Gingile hear the story of Ngede they have respect for the little bird. Whenever they 
+          <span id="harvest_word" style="background-color: yellow">harvest</span> honey, they make sure to leave the 
+          biggest part of the comb for Honeyguide!
+           <div id="showQ13" class="success-checkmark" style="display: inline-block;" onclick="show('harvest'); highlight('harvest_word'); hide('showQ13')"></div>
+        </div>
+      </div>
+    </div>
+    
+      <!-- Final slide-->
+    <div class="mySlides fade">
+      <div class="slide" style="text-align: center">
+        <div class="title">The Honeyguide's Revenge</div>
+        <div class="end">The End</div>
+      </div>
+    </div>
+
+
+  
+    <!-- Next and previous buttons -->
+    <a class="next" id="n" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <!-- The dots/circles -->
+  <div class="dots" id="c" style="text-align:center;">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+    <span class="dot" onclick="currentSlide(10)"></span>
+    <span class="dot" onclick="currentSlide(11)"></span>
+    <span class="dot" onclick="currentSlide(12)"></span>
+    <span class="dot" onclick="currentSlide(13)"></span>
+    <span class="dot" onclick="currentSlide(14)"></span>
+  </div>
+
+
+
+
+    </body>
+
+   
+
+</html>
