@@ -15,20 +15,11 @@ function plusSlides(n) {
 
 // Next/previous for not metacognitive
 function plusSlides2(n) {
-  showSlides((slideIndex += n));
+  slideIndex += n;
   slidesRead = Math.max(slidesRead, slideIndex);
+  showSlides(slideIndex);
   document.getElementById(`dot${slideIndex}`).classList.add("activeDot");
   document.getElementById("c").style.display = "block";
-  if (slideIndex == 14) {
-    document.getElementById("n2").style.display = "none";
-  } else {
-    document.getElementById("n2").style.display = "block";
-  }
-  if (slideIndex >= 2) {
-    document.getElementById("p").style.display = "block";
-  } else {
-    document.getElementById("p").style.display = "none";
-  }
   check = 0;
   check2 = 0;
 }
@@ -103,6 +94,16 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   slides[slideIndex - 1].style.display = "block";
+  if (slideIndex == slidesRead) {
+    document.getElementById("n2").style.display = "none";
+  } else {
+    document.getElementById("n2").style.display = "block";
+  }
+  if (slideIndex >= 2) {
+    document.getElementById("p").style.display = "block";
+  } else {
+    document.getElementById("p").style.display = "none";
+  }
 }
 
 function clickSlide(n) {
