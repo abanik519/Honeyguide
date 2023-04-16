@@ -42,8 +42,8 @@
   font-weight: bold;
   position: relative;
   padding: 1vw;
-  margin-left: 26vw;
-  width: 50vw;
+  width: 100%;
+  text-align: center;
   text-decoration: overline underline gray;
 }
 
@@ -312,12 +312,13 @@
 }
 
 .endWords {
+  width: 100%;
   float: left;
-  font-size: 2vw;
+  font-size: 1.5vw;
   word-wrap: break-word;
   text-overflow: clip;
-  display: block;
-  padding: 0 100px 0 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .end {
@@ -325,7 +326,9 @@
   margin-top: 50px;
   width: 100%;
   float: left;
-  height: 30vh;
+  height: 39vh;
+  display: flex;
+  justify-content: center;
 }
 
 .doneButton {

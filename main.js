@@ -80,7 +80,7 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   if (slideIndex > 1) {
-    document.getElementById("pageNum").innerHTML = String(n - 1);
+    document.getElementById("pageNum").innerHTML = String(n - 2);
   } else {
     document.getElementById("pageNum").innerHTML = "";
   }
