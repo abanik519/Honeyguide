@@ -322,11 +322,11 @@
 }
 
 .end {
-  font-size: 60px;
+  font-size: 55px;
   margin-top: 50px;
   width: 100%;
   float: left;
-  height: 39vh;
+  height: 35vh;
   display: flex;
   justify-content: center;
 }
