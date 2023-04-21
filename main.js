@@ -168,6 +168,7 @@ function clickG() {
     failure.play();
   } else {
     success.play();
+    showNext2();
     stop("1.1B");
     document.getElementById("firstq2").style.display = "none";
     document.getElementById("firstSuccess").style.display = "block";
@@ -202,16 +203,14 @@ function stop(sound_path) {
 function checkWord() {
   var value = document.getElementById("input1").value;
   if (value != "") {
-    showNext();
-    hide("comb");
+    showNext2();
     stop("1.5");
   }
 }
 function checkWord2() {
   var value = document.getElementById("input1").value;
   if (value != "") {
-    showNext();
-    hide("comb");
+    showNext2();
   }
 }
 
@@ -220,8 +219,7 @@ function checkWord3() {
   var value2 = document.getElementById("inputLeapard").value;
   if (value == "hive" && value2 == "leapard") {
     success();
-    showNext();
-    hide("Q10");
+    showNext2();
   } else {
     failure();
   }
@@ -233,8 +231,7 @@ function count() {
 
 function checkCount(num, id) {
   if (check == num) {
-    document.getElementById(id).style.display = "none";
-    showNext();
+    showNext2();
   }
 }
 
@@ -243,9 +240,7 @@ function count2() {
 }
 function checkCount2(num, id) {
   if (check2 == num) {
-    document.getElementById(id).style.display = "none";
-
-    showNext();
+    showNext2();
   }
 }
 

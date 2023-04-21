@@ -54,7 +54,7 @@
   height: 20vw;
   padding: 1vw;
   background-color: whitesmoke;
-  text-align: center;
+  text-align: left;
   font-size: 2vw;
   position: absolute;
   border: 5px solid black;
@@ -109,10 +109,10 @@
   width: 25vw;
   height: auto;
   display: none;
-  padding: 0.5vw 2vw 0.5vw 1vw;
+  padding: 5px 20px;
   margin-left: 54vw;
   background: lightgray;
-  text-align: center;
+  text-align: left;
   font-size: 1.5vw;
   border-radius: 20vw;
   border: 0.2vw solid black;
@@ -179,7 +179,7 @@
   margin-top: 3vw;
   background: white;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   font-weight: 700;
   font-size: 1.5vw;
   border-radius: 9px;
