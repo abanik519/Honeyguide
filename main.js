@@ -3,6 +3,7 @@ var slidesRead = 1;
 showSlides(slideIndex);
 var check = 0;
 var check2 = 0;
+var hasIntro = false;
 
 // Next/previous controls
 function plusSlides(n) {
@@ -11,6 +12,10 @@ function plusSlides(n) {
   document.getElementById("c").style.display = "block";
   check = 0;
   check2 = 0;
+}
+
+function hasIntroTrue() {
+  hasIntro = true;
 }
 
 // Next/previous for not metacognitive
@@ -79,10 +84,18 @@ function begin2() {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  if (slideIndex > 1) {
-    document.getElementById("pageNum").innerHTML = String(n - 2);
+  if (!hasIntro) {
+    if (slideIndex > 1) {
+      document.getElementById("pageNum").innerHTML = String(n - 2);
+    } else {
+      document.getElementById("pageNum").innerHTML = "";
+    }
   } else {
-    document.getElementById("pageNum").innerHTML = "";
+    if (slideIndex > 2) {
+      document.getElementById("pageNum").innerHTML = String(n - 3);
+    } else {
+      document.getElementById("pageNum").innerHTML = "";
+    }
   }
   if (n > slides.length) {
     slideIndex = 1;

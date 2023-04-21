@@ -300,6 +300,14 @@
   width: auto;
 }
 
+.introPic {
+  margin-left: 14%;
+  margin-top: 1vw;
+  height: 20vw;
+  float: left;
+  width: auto;
+}
+
 .words {
   float: left;
   font-size: 2vw;
@@ -307,6 +315,17 @@
   text-overflow: clip;
   display: block;
   margin-top: 6vw;
+  width: 40vw;
+  padding-left: 20px;
+}
+
+.introWords {
+  float: left;
+  font-size: 1.8vw;
+  word-wrap: break-word;
+  text-overflow: clip;
+  display: block;
+  margin-top: 1vw;
   width: 40vw;
   padding-left: 20px;
 }
@@ -342,6 +361,10 @@
     rgba(47, 121, 9, 1) 88%
   );
   cursor: pointer;
+}
+
+.boldWord {
+  font-weight: bold;
 }
 
 .mySlides {
