@@ -81,6 +81,16 @@ function begin2() {
   }
 }
 
+function beginWithAudio(id) {
+  var input = document.getElementById("name");
+  var audioClip = document.getElementById(id);
+  if (input.value != "") {
+    document.getElementById("intro").style.display = "block";
+    audioClip.play();
+    hide("name");
+  }
+}
+
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");

@@ -12,6 +12,14 @@
   align-items: center;
 }
 
+.videoContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+}
+
 /* Slideshow container */
 .slideshow-container {
   width: 99%;
