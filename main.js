@@ -63,6 +63,7 @@ function showNext() {
   document.getElementById("n").style.display = "block";
 }
 function showNext2() {
+  document.querySelectorAll("audio").forEach((el) => el.pause());
   document.getElementById("n2").style.display = "block";
 }
 
@@ -159,13 +160,14 @@ function clickNgede2() {
   var failure = new Audio("/sounds/failure.wav");
   if (document.getElementById("firstq1").style.width == "18vw") {
     success.play();
-    stop("1.1A");
+    stop("1.0A");
     document.getElementById("firstq1").style.width = "17vw";
     document.getElementById("firstq2").style.display = "block";
     document.getElementById("firstq1").style.display = "none";
     document.getElementById("firstAvatar").onclick = function () {
       toggle("firstq2");
     };
+    play("1.0B");
   } else {
     failure.play();
   }
@@ -179,7 +181,7 @@ function clickG() {
   } else {
     success.play();
     showNext2();
-    stop("1.1B");
+    stop("1.0B");
     document.getElementById("firstq2").style.display = "none";
     document.getElementById("firstSuccess").style.display = "block";
     document.getElementById("firstAvatar").onclick = function () {
