@@ -264,13 +264,19 @@
           >
             Which one of these fruits is a fig? Click the correct fruit.
             <br /><br />
-            <img class="multImg" onclick="failure()" src="images/Orange.PNG" />
-            <img
-              class="multImg"
-              onclick="success(); showNext2();"
-              src="images/Fig.PNG"
-            />
-            <img class="multImg" onclick="failure()" src="images/Kiwi.PNG" />
+            <div class="imgContainer">
+              <img
+                class="multImg"
+                onclick="failure()"
+                src="images/Orange.PNG"
+              />
+              <img
+                class="multImg"
+                onclick="success(); showNext2();"
+                src="images/Fig.PNG"
+              />
+              <img class="multImg" onclick="failure()" src="images/Kiwi.PNG" />
+            </div>
           </div>
           <div class="words">
             After half an hour, they reached a huge wild
@@ -336,8 +342,8 @@
             class="dictionary"
             style="margin-top: -1.5vw; margin-left: 50vw; display: none"
           >
-            <b style="background-color: lightgray">Hive (noun):</b>A shelter for
-            a colony of bees.
+            <b style="background-color: lightgray">Hive (noun):</b> A shelter
+            for a colony of bees.
           </div>
           <div class="words">
             Soon he could hear the loud buzzing of the busy bees. They were
@@ -428,7 +434,7 @@
             deserves a reward? <br /><span
               class="choice"
               ;
-              style="background-color: white; cursor: pointer; color: dimgrey"
+              style="background-color: white; cursor: pointer; color: black"
               onclick="showNext2();"
               >(a) Yes
             </span>
@@ -436,7 +442,7 @@
             <span
               class="choice"
               ;
-              style="background-color: white; cursor: pointer; color: dimgrey"
+              style="background-color: white; cursor: pointer; color: black"
               onclick="showNext2();"
               >(b) No
             </span>
@@ -578,7 +584,7 @@
             class="dictionary"
             style="margin-top: -1.5vw; margin-left: 50vw; display: none"
           >
-            <b style="background-color: lightgray">Reveal (verb):</b>Show
+            <b style="background-color: lightgray">Reveal (verb):</b> Show
             something that was hidden. Click the word “reveal” in the text to
             hear the leopard.
           </div>
@@ -679,6 +685,7 @@
               width: 30vw;
               margin-top: 20vw;
               margin-left: 800px;
+              height: fit-content;
             "
             class="multiple"
           >

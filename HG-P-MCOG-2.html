@@ -184,7 +184,7 @@
             style="
               margin-left: 10vw;
               margin-top: 1vw;
-              height: 25vw;
+              height: fit-content;
               display: none;
             "
           >
@@ -234,8 +234,9 @@
             class="dictionary"
             style="margin-top: -2vw; width: 30vw"
           >
-            <b style="background-color: lightgray">Trusted (verb):</b>Feels sure
-            that the other character will give truthful or accurate information.
+            <b style="background-color: lightgray">Trusted (verb):</b> Feels
+            sure that the other character will give truthful or accurate
+            information.
             <div class="bubble3"></div>
             <div class="bubble4"></div>
           </div>
@@ -302,7 +303,7 @@
 
           <div
             id="hive"
-            class="multiple arrow"
+            class="multiple"
             style="
               display: none;
               height: 22vw;
@@ -315,7 +316,11 @@
             <br /><br />
             <img class="multImg" onclick="failure()" src="images/q1.PNG" />
             <img class="multImg" onclick="failure()" src="images/q2.PNG" />
-            <img class="multImg" onclick="showNext2();" src="images/q4.PNG" />
+            <img
+              class="multImg"
+              onclick="success();showNext2();"
+              src="images/q4.PNG"
+            />
             <img class="multImg" onclick="failure()" src="images/q3.PNG" />
           </div>
           <div class="words">
@@ -390,7 +395,8 @@
           >
             <b style="background-color: lightgray"
               >Perch (verb, present tense) or Perched (past tense):</b
-            >To rest on the edge of something or high up.
+            >
+            To rest on the edge of something or high up.
             <div class="bubble3"></div>
             <div class="bubble4"></div>
           </div>
@@ -458,12 +464,10 @@
             <source src="/sounds/MCOG-2/2.8.mp3" />
           </audio>
 
-          <form
-            onsubmit="success(); showNext2(); hide('delicious'); unhighlight('delicious_word'); return false;"
-          >
+          <form>
             <div
               id="delicious"
-              class="multiple arrow"
+              class="multiple"
               style="
                 margin-left: 6vw;
                 height: 12vw;
@@ -488,14 +492,9 @@
                 "
                 required
                 placeholder="Enter Answer"
+                oninput="showNext2()"
               />
               honey.
-              <input
-                id="submit1"
-                type="submit"
-                style="background-color: greenyellow; font-size: 1.5vw"
-                value="Continue"
-              />
             </div>
           </form>
           <div class="words">
@@ -528,9 +527,7 @@
             <source src="/sounds/MCOG-2/2.9.mp3" />
           </audio>
 
-          <form
-            onsubmit="success(); showNext2(); hide('sharp'); return false; hide('hideQ11');"
-          >
+          <form>
             <div
               id="sharp"
               class="multiple"
@@ -557,6 +554,7 @@
                 "
                 required
                 placeholder="Enter Answer"
+                oninput="showNext2()"
               />
               and sharp
               <input
@@ -573,14 +571,9 @@
                 "
                 required
                 placeholder="Enter Answer"
+                oninput="showNext2()"
               />
               .
-              <input
-                id="submit2"
-                type="submit"
-                style="background-color: greenyellow; font-size: 1.5vw"
-                value="Continue"
-              />
             </div>
           </form>
           <div class="words">
@@ -616,7 +609,7 @@
             style="
               margin-left: 45vw;
               margin-top: 15vw;
-              height: 20vw;
+              height: fit-content;
               display: none;
             "
           >
@@ -665,7 +658,7 @@
             class="dictionary"
             style="width: 30vw; margin-top: -3vw"
           >
-            <b style="background-color: lightgray">Harvest (verb):</b>To gather
+            <b style="background-color: lightgray">Harvest (verb):</b> To gather
             a crop or natural product for use, usually for eating.
             <div class="bubble3"></div>
             <div class="bubble4"></div>

@@ -1,5 +1,5 @@
-var slideIndex = 1;
-var slidesRead = 1;
+var slideIndex = 9;
+var slidesRead = 9;
 showSlides(slideIndex);
 var check = 0;
 var check2 = 0;
@@ -207,9 +207,11 @@ function play(sound_path) {
 }
 
 function stop(sound_path) {
-  var sound = document.getElementById(sound_path);
-  sound.pause();
-  sound.currentTime = 0;
+  if (document.getElementById(sound_path)) {
+    var sound = document.getElementById(sound_path);
+    sound.pause();
+    sound.currentTime = 0;
+  }
 }
 
 function checkWord() {

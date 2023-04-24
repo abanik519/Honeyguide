@@ -71,14 +71,14 @@
           </div>
           <div id="intro" style="width: 35vw; display: none" class="speech sb1">
             Welcome, my name is Whoo! You will read the story "The Honeyguide's
-            Revenge." This story is a folktale told by the Zulu people in
+            Revenge." This story is a folktale told by the Zulu people in South
             Africa. A folktale is a traditional story that is passed down from
             one generation to another by word of mouth. Folktales usually
             explain something. Often folktales are a way for older people to
             teach young people how to survive and prosper in the local
             environment. South Africa is a large country with a beautiful and
             varied environment. After you have read the story you can think
-            about what you have learned about living in Africa
+            about what you have learned about living in South Africa
           </div>
         </div>
       </div>
@@ -210,13 +210,19 @@
           >
             Which one of these fruits is a fig? Click the correct fruit.
             <br /><br />
-            <img class="multImg" onclick="failure()" src="images/Orange.PNG" />
-            <img
-              class="multImg"
-              onclick="success(); showNext2();"
-              src="images/Fig.PNG"
-            />
-            <img class="multImg" onclick="failure()" src="images/Kiwi.PNG" />
+            <div class="imgContainer">
+              <img
+                class="multImg"
+                onclick="failure()"
+                src="images/Orange.PNG"
+              />
+              <img
+                class="multImg"
+                onclick="success(); showNext2();"
+                src="images/Fig.PNG"
+              />
+              <img class="multImg" onclick="failure()" src="images/Kiwi.PNG" />
+            </div>
           </div>
           <div class="words">
             After half an hour, they reached a huge wild
@@ -282,8 +288,8 @@
             class="dictionary"
             style="margin-top: -1.5vw; margin-left: 50vw; display: none"
           >
-            <b style="background-color: lightgray">Hive (noun):</b>A shelter for
-            a colony of bees.
+            <b style="background-color: lightgray">Hive (noun):</b> A shelter
+            for a colony of bees.
           </div>
           <div class="words">
             Soon he could hear the loud buzzing of the busy bees. They were
@@ -374,7 +380,7 @@
             deserves a reward? <br /><span
               class="choice"
               ;
-              style="background-color: white; cursor: pointer; color: dimgrey"
+              style="background-color: white; cursor: pointer; color: black"
               onclick="showNext2();"
               >(a) Yes
             </span>
@@ -382,7 +388,7 @@
             <span
               class="choice"
               ;
-              style="background-color: white; cursor: pointer; color: dimgrey"
+              style="background-color: white; cursor: pointer; color: black"
               onclick="showNext2();"
               >(b) No
             </span>
@@ -524,7 +530,7 @@
             class="dictionary"
             style="margin-top: -1.5vw; margin-left: 50vw; display: none"
           >
-            <b style="background-color: lightgray">Reveal (verb):</b>Show
+            <b style="background-color: lightgray">Reveal (verb):</b> Show
             something that was hidden.
           </div>
           <div class="words">
@@ -621,6 +627,7 @@
               width: 30vw;
               margin-top: 20vw;
               margin-left: 800px;
+              height: fit-content;
             "
             class="multiple"
           >
