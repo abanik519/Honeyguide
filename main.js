@@ -1,5 +1,5 @@
-var slideIndex = 9;
-var slidesRead = 9;
+var slideIndex = 1;
+var slidesRead = 1;
 showSlides(slideIndex);
 var check = 0;
 var check2 = 0;
