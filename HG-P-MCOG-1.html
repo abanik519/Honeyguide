@@ -9,7 +9,7 @@
     <!-- Slideshow container -->
     <div class="slideshow-container">
       <audio id="success">
-        <source src="/sounds/success.wav" />
+        <source src="sounds/success.wav" />
       </audio>
       <audio id="failure">
         <source src="/sounds/failure.wav" />
@@ -123,9 +123,6 @@
           <div id="firstSuccess" style="display: none" class="speechQ sb2">
             Terrific! Go to the next page.
           </div>
-          <audio src="/sounds/success.wav"></audio>
-          <audio src="/sounds/failure.wav"></audio>
-          <audio src="/sounds/error.mp3"></audio>
           <div
             id="Ngede"
             style="
@@ -172,6 +169,8 @@
             >
             1. Made a rapid sequence of short sharp noises. 2.Chattered
             on-and-on. &nbsp;
+            <div class="bubble3"></div>
+            <div class="bubble4"></div>
           </div>
           <div class="words">
             One day while Gingile was out hunting he heard the call of Ngede.
@@ -218,7 +217,7 @@
               />
               <img
                 class="multImg"
-                onclick="success(); showNext2();"
+                onclick="success(); showNext2()"
                 src="images/Fig.PNG"
               />
               <img class="multImg" onclick="failure()" src="images/Kiwi.PNG" />
@@ -344,7 +343,7 @@
               "
               placeholder="Enter Answer"
               oninput="showNext2()"
-            />
+            />.
           </div>
           <div class="words">
             When the bees were out, Gingile pushed his hands into the nest. He

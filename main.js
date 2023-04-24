@@ -20,6 +20,7 @@ function hasIntroTrue() {
 
 // Next/previous for not metacognitive
 function plusSlides2(n) {
+  document.querySelectorAll("audio").forEach((el) => el.pause());
   slideIndex += n;
   slidesRead = Math.max(slidesRead, slideIndex);
   showSlides(slideIndex);
@@ -63,7 +64,6 @@ function showNext() {
   document.getElementById("n").style.display = "block";
 }
 function showNext2() {
-  document.querySelectorAll("audio").forEach((el) => el.pause());
   document.getElementById("n2").style.display = "block";
 }
 
@@ -202,8 +202,10 @@ function failure() {
 }
 
 function play(sound_path) {
-  var sound = document.getElementById(sound_path);
-  sound.play();
+  if (document.getElementById(sound_path)) {
+    var sound = document.getElementById(sound_path);
+    sound.play();
+  }
 }
 
 function stop(sound_path) {
