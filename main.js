@@ -22,6 +22,7 @@ function hasIntroTrue() {
 function plusSlides2(n) {
   document.querySelectorAll("audio").forEach((el) => el.pause());
   slideIndex += n;
+  console.log(slideIndex);
   slidesRead = Math.max(slidesRead, slideIndex);
   showSlides(slideIndex);
   document.getElementById(`dot${slideIndex}`).classList.add("activeDot");
@@ -64,6 +65,7 @@ function showNext() {
   document.getElementById("n").style.display = "block";
 }
 function showNext2() {
+  slidesRead += 1;
   document.getElementById("n2").style.display = "block";
 }
 
