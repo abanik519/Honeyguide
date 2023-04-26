@@ -65,7 +65,9 @@ function showNext() {
   document.getElementById("n").style.display = "block";
 }
 function showNext2() {
-  slidesRead += 1;
+  if (slidesRead <= slideIndex) {
+    slidesRead += 1;
+  }
   document.getElementById("n2").style.display = "block";
 }
 
