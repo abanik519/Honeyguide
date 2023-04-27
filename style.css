@@ -40,6 +40,18 @@
   align-items: center;
 }
 
+.inputStyle {
+  width: 10vw;
+  font-size: 1.2vw;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: solid;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+}
+
 .slide {
   width: 100%;
   position: relative;

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <script src="main.js"></script>
+  <body class="storyContainer">
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+      <audio id="success">
+        <source src="sounds/success.wav" />
+      </audio>
+      <audio id="failure">
+        <source src="/sounds/failure.wav" />
+      </audio>
+      <audio id="introsound">
+        <source src="/sounds/MCOG-1/1.T.mp3" />
+      </audio>
+      <audio id="chatter" onended="showNext2()">
+        <source src="sounds/MCOG-3/Whistle and Honeyguide Bird Audio.mp3" />
+      </audio>
+      <audio id="buzzing" onended="showNext2()">
+        <source src="sounds/MCOG-1/Bee Buzzing Audio.mp3" />
+      </audio>
+      <!-- Full-width images with number and caption text -->
+      <!-- Intro slide -->
+      <div class="mySlides fade" style="display: block">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/Cover.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <i
+            id="click"
+            class="fa fa-arrow-left"
+            style="display: none; margin-left: 49vw"
+            >&nbsp;Click Here</i
+          >
+          <div
+            style="
+              width: 37%;
+              margin-left: 50%;
+              margin-top: 5vw;
+              height: 20vw;
+              position: absolute;
+              float: right;
+              vertical-align: middle;
+              text-align: center;
+            "
+          >
+            <input
+              placeholder="Enter Name"
+              id="name"
+              style="
+                vertical-align: middle;
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                text-align: center;
+                position: relative;
+                height: 5vh;
+                width: 60%;
+                margin-top: 20vh;
+                font-size: 200%;
+                outline: none;
+              "
+            />
+            <br />
+            <br />
+            <button
+              style="width: 40%; height: 3vw; font-size: 120%; cursor: pointer"
+              onclick="show('intro'); hide('name')"
+            >
+              Press to Begin
+            </button>
+          </div>
+          <div id="intro" style="width: 35vw; display: none" class="speech sb1">
+            Welcome, my name is Whoo! You will read the story "The Honeyguide's
+            Revenge." This story is a folktale told by the Zulu people in
+            Africa. A folktale is a traditional story that is passed down from
+            one generation to another by word of mouth. Folktales usually
+            explain something. Often folktales are a way for older people to
+            teach young people how to survive and prosper in the local
+            environment. South Africa is a large country with a beautiful and
+            varied environment. What are three things you know about Africa? (1)
+            <input class="inputStyle" oninput="showNext2()" />; (2)
+            <input class="inputStyle" oninput="showNext2()" />; (3)
+            <input class="inputStyle" oninput="showNext2()" />.
+          </div>
+        </div>
+      </div>
+
+      <!-- Second slide -->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s1.jpg" />
+          <img id="firstAvatar" class="avatar" src="/images/Avatar.png" />
+          <audio id="1.1A">
+            <source src="/sounds/1.1A.mp3" />
+          </audio>
+          <audio id="1.1B">
+            <source src="/sounds/1.1B.mp3" />
+          </audio>
+
+          <div class="words">
+            Today you will read the story of The Honey Guide. This is the story
+            of Ngede, the Honeyguide, and a greedy young man named Gingile.<span
+              class="doneButton"
+              id="done1"
+              onclick="show('firstq1');hide('done1')"
+              >Done
+            </span>
+          </div>
+
+          <div
+            id="firstq1"
+            style="display: none; width: 18vw; margin-top: -2vw"
+            class="speechQ sb2"
+          >
+            Look at the picture. Who is Ngede? Click him on the picture.
+          </div>
+          <div
+            id="firstq2"
+            style="display: none; margin-top: -2vw"
+            class="speechQ sb2"
+          >
+            Look at the picture. Who is Gingile? Click him on the picture.
+          </div>
+          <div id="firstSuccess" style="display: none" class="speechQ sb2">
+            Terrific! Go to the next page.
+          </div>
+          <div
+            id="Ngede"
+            style="
+              width: 5%;
+              height: 5vw;
+              background-color: transparent;
+              margin-left: 36%;
+              margin-top: 10vh;
+              cursor: pointer;
+              position: absolute;
+            "
+            onclick="clickNgede2()"
+          ></div>
+          <div
+            id="Gingile"
+            style="
+              width: 8%;
+              height: 20vw;
+              margin-top: 10vw;
+              margin-left: 26vw;
+              cursor: pointer;
+              background-color: transparent;
+              position: absolute;
+            "
+            onclick="clickG()"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Third slide -->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s1.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+
+          <div
+            id="rattled"
+            style="display: none; width: 30vw; margin-top: -1.5vw"
+            class="speech sb2"
+          >
+            Click
+            <span
+              style="
+                text-decoration: underline;
+                background-color: transparent;
+                cursor: pointer;
+              "
+              onclick="play('chatter')"
+              >here</span
+            >
+            to listen to these two sounds. Which one sounds like a honeyguide
+            chattering?
+          </div>
+          <div class="words">
+            One day while Gingile was out hunting he heard the call of Ngede.
+            Gingile’s mouth began to water at the thought of honey. He stopped
+            and listened carefully, searching until he saw the bird in the
+            branches above his head. “Chitik-chitik-chitik,” the little bird
+            <span id="rattled_word" style="background-color: yellow">
+              rattled</span
+            >, as he flew to the next tree, and the next. “Chitik, chitik,
+            chitik,” he called, stopping from time to time to be sure that
+            Gingile followed.<span
+              class="doneButton"
+              id="done2"
+              onclick="show('rattled');hide('done2')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth slide-->
+
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s2.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.2">
+            <source src="/sounds/1.2.mp3" />
+          </audio>
+
+          <div
+            id="Q3"
+            class="multiple"
+            style="display: none; margin-right: 500px; margin-top: 350px"
+          >
+            Which one of these fruits is a fig? Click the correct fruit.
+            <br /><br />
+            <div class="imgContainer">
+              <img
+                class="multImg"
+                onclick="failure()"
+                src="images/Orange.PNG"
+              />
+              <img
+                class="multImg"
+                onclick="success(); showNext2()"
+                src="images/Fig.PNG"
+              />
+              <img class="multImg" onclick="failure()" src="images/Kiwi.PNG" />
+            </div>
+          </div>
+          <div class="words">
+            After half an hour, they reached a huge wild
+            <span id="fig_word">fig</span> tree. Ngede hopped about madly among
+            the branches. He then settled on one branch and cocked his head at
+            Gingile as if to say, “Here it is! Come now! What is taking you so
+            long?” Gingile couldn’t see any bees from under the tree, but he
+            trusted Ngede.<span
+              class="doneButton"
+              id="done3"
+              onclick="show('Q3');hide('done3')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fifth slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s3.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.3">
+            <source src="/sounds/1.3.mp3" />
+          </audio>
+
+          <div
+            id="Q5"
+            style="display: none; width: 25vw; margin-top: -1.5vw"
+            class="speech sb2"
+          >
+            I wonder why Gingile needs a smoking stick?
+          </div>
+          <div class="words">
+            So Gingile put down his hunting spear under the tree, gathered some
+            dry twigs and made a small fire. When the fire was burning well, he
+            put a long dry stick into the heart of the fire. This wood was
+            especially known to make lots of smoke while it burned. He began
+            climbing, holding the cool end of the
+            <span id="smoking_word">smoking stick</span> in his teeth.<span
+              class="doneButton"
+              id="done4"
+              onclick="show('Q5');showNext2();hide('done4')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sixth slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s4.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.4">
+            <source src="/sounds/1.4.mp3" />
+          </audio>
+
+          <div
+            id="hive"
+            class="multiple"
+            style="display: none; margin-right: 500px; margin-top: 250px"
+          >
+            Drag the colony of bees into the hive:
+            <br /><br />
+            <div class="imgContainer">
+              <img
+                class="multImg"
+                draggable="false"
+                src="images/Beehive Image.jpg"
+                ondragover="allowDrop(event)"
+              />
+              <img
+                class="multImg"
+                draggable="true"
+                onmousedown="startDrag(event)"
+                onmousemove="dragDiv(event, 'buzzing')"
+                onmouseup="stopDrag(event)"
+                style="cursor: move; position: relative"
+                src="images/Group of Bees Image.png"
+              />
+            </div>
+          </div>
+          <div class="words">
+            Soon he could hear the loud buzzing of the busy bees. They were
+            coming in and out of a hollow in the tree trunk – their
+            <span id="hive_word" style="background-color: yellow">hive</span>.
+            When Gingile reached the hive he pushed the smoking end of the stick
+            into the hollow. The bees came rushing out, angry and mean. They
+            flew away because they didn’t like the smoke – but not before they
+            had given Gingile some painful stings!<span
+              class="doneButton"
+              id="done5"
+              onclick="show('hive');hide('done5')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seventh slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s5.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.5">
+            <source src="/sounds/1.5.mp3" />
+          </audio>
+
+          <div
+            id="comb"
+            class="multiple"
+            style="
+              margin-left: 16vw;
+              height: 8vw;
+              margin-top: 20vw;
+              display: none;
+            "
+          >
+            Gingile wanted the bee's honey so he took their
+            <input
+              id="input1"
+              style="
+                width: 15vw;
+                height: 3vw;
+                font-size: 2vw;
+                border-top: hidden;
+                border-left: hidden;
+                border-right: hidden;
+                background-color: whitesmoke;
+                text-align: center;
+                outline: none;
+              "
+              placeholder="Enter Answer"
+              oninput="showNext2()"
+            />.
+          </div>
+          <div class="words">
+            When the bees were out, Gingile pushed his hands into the nest. He
+            took out handfuls of the heavy comb, dripping with rich honey and
+            full of fat, white grubs. He put the comb carefully in the pouch he
+            carried on his shoulder, and started to climb down the
+            <span id="tree_word">tree</span>.<span
+              class="doneButton"
+              id="done6"
+              onclick="show('comb');hide('done6')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eight slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s6.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.6">
+            <source src="/sounds/1.6.mp3" />
+          </audio>
+
+          <div
+            id="Q8"
+            style="display: none; width: 600px; margin-top: -2vw"
+            class="speech sb2"
+          >
+            Ngede is expecting a reward. Do you think that the Honeyguide
+            deserves a reward? <br /><span
+              class="choice"
+              ;
+              style="background-color: white; cursor: pointer; color: black"
+              onclick="showNext2()"
+              >(a) Yes
+            </span>
+            <br />
+            <span
+              class="choice"
+              ;
+              style="background-color: white; cursor: pointer; color: black"
+              onclick="showNext2()"
+              >(b) No
+            </span>
+          </div>
+          <div class="words">
+            Ngede eagerly watched everything that Gingile was doing. He was
+            waiting for him to leave a fat piece of honeycomb as a thank-you
+            offering to the Honeyguide. Ngede flittered from branch to branch,
+            closer and closer to the ground. Finally Gingile reached the bottom
+            of the tree. Ngede perched on a rock near the boy and waited for his
+            reward.<span
+              class="doneButton"
+              id="done7"
+              onclick="show('Q8');hide('done7')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ninth slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s7.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.7">
+            <source src="/sounds/1.7.mp3" />
+          </audio>
+
+          <div
+            id="Q9"
+            class="multiple"
+            style="
+              margin-left: 7vw;
+              margin-top: 3vw;
+              height: 23vw;
+              display: none;
+              text-align: start;
+            "
+          >
+            Ngede is furious. Which of these words is a synonym for furious?
+            Click all the words that mean the same thing as furious:
+            <br /><span
+              id="choice1"
+              class="choice"
+              onclick="success(); count(); checkCount(3, 'Q9'); highlight('choice1'); disableClick('choice1');"
+              >(a) angry</span
+            >
+            <br /><span
+              id="choice2"
+              class="choice"
+              onclick="success(); count(); checkCount(3, 'Q9'); highlight('choice2'); disableClick('choice2');"
+              >(b) enraged</span
+            >
+            <br /><span class="choice" onclick="failure()">(c) tranquil</span>
+            <br /><span
+              id="choice3"
+              class="choice"
+              onclick="success(); count(); checkCount(3, 'Q9'); highlight('choice3'); disableClick('choice3');"
+              >(d) mad</span
+            >
+            <br /><span class="choice" onclick="failure()">(e) serene</span>
+          </div>
+          <div class="words">
+            But, Gingile put out the fire, picked up his spear and started
+            walking home, ignoring the bird. Ngede called out angrily,
+            “VIC-torr! VIC-torrr!” Gingile stopped, stared at the little bird
+            and laughed aloud. “You want some honey, do you, my friend? Ha! But
+            I did all the work, and got all the stings. Why should I share any
+            of this lovely honey with you?” Then he walked off. Ngede was
+            <span id="furious_word">furious</span>! This was no way to treat
+            him! But he would get his revenge.<span
+              class="doneButton"
+              id="done8"
+              onclick="show('Q9');hide('done8')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tenth slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s8.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.8">
+            <source src="/sounds/1.8.mp3" />
+          </audio>
+
+          <div
+            id="Q10"
+            style="display: none; width: 25vw; margin-top: -2vw; width: 600px"
+            class="speech sb2"
+          >
+            Gingile is eagerly following the honeyguide bird because he is sure
+            that Ngede will lead him to more honey. He can't wait to find a new
+            hive. I wonder if there is a beehive in this tree? What do you
+            think? Let's find out.
+          </div>
+          <div class="words">
+            One day several weeks later Gingile again heard the honey call of
+            Ngede. He remembered the delicious honey, and
+            <span id="eagerly_word" style="background-color: yellow"
+              >eagerly</span
+            >
+            followed the bird once again. After leading Gingile along the edge
+            of the forest, Ngede stopped to rest in a great umbrella thorn.
+            “Ahh,” thought Gingile. “The hive must be in this tree.” He quickly
+            made his small fire and began to climb, the smoking branch in his
+            teeth. Ngede sat and watched.<span
+              class="doneButton"
+              id="done9"
+              onclick="show('Q10'); showNext2();hide('done9')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eleventh slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s9.jpg" />
+          <img
+            class="avatar"
+            onclick="toggle('tenth')"
+            src="/images/Avatar.png"
+          />
+          <audio id="1.9">
+            <source src="/sounds/1.9.mp3" />
+          </audio>
+
+          <div
+            id="reveal"
+            class="dictionary"
+            style="margin-top: -1.5vw; margin-left: 50vw; display: none"
+          >
+            <b style="background-color: lightgray">Reveal (verb):</b> Show
+            something that was hidden.
+          </div>
+          <div class="words">
+            Gingile climbed, wondering why he didn’t hear the usual buzzing.
+            “Perhaps the hive is deep in the tree,” he thought to himself. He
+            pulled himself up another branch. But instead of the hive, he was
+            staring into the face of a leopard! Leopard was very angry at having
+            her sleep so rudely interrupted. She narrowed her eyes, opened her
+            mouth to
+            <span id="reveal_word" style="background-color: yellow"
+              >reveal</span
+            >
+            her very large and very sharp teeth.<span
+              class="doneButton"
+              id="done10"
+              onclick="show('reveal');showNext2();hide('done10')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Twelfth slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s10.jpg" />
+          <img
+            class="avatar"
+            onclick="toggle('eleventh')"
+            src="/images/Avatar.png"
+          />
+          <audio id="1.10">
+            <source src="/sounds/1.10.mp3" />
+          </audio>
+
+          <div
+            id="Q12"
+            style="
+              display: none;
+              width: 30vw;
+              text-align: start;
+              height: fit-content;
+              margin-left: 6vw;
+              margin-top: 3vw;
+            "
+            class="multiple"
+          >
+            How did Ngede have his revenge?
+
+            <br /><span class="choice" onclick="failure()"
+              >(a) He stole the honeycomb from Gingile's pouch.
+            </span>
+            <br /><span class="choice" onclick="failure()"
+              >(b) He startled Gingile so that the boy fell and twisted his
+              ankle.
+            </span>
+            <br /><span class="choice" onclick="success(); showNext2();"
+              >(c) He tricked Gingile into climbing the wrong tree and waking up
+              a dangerous leopard.</span
+            >
+          </div>
+          <div class="words">
+            Before Leopard could take a swipe at Gingile, he rushed down the
+            tree. In his hurry he missed a branch, and landed with a heavy thud
+            on the ground twisting his ankle. He hobbled off as fast as he
+            could. Luckily for him, Leopard was still too sleepy to chase him.
+            Ngede, the Honeyguide, had his
+            <span id="revenge_word">revenge</span>. And Gingile learned his
+            lesson.<span
+              class="doneButton"
+              id="done11"
+              onclick="show('Q12');hide('done11')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thirteenth slide-->
+      <div class="mySlides fade">
+        <div class="slide">
+          <div class="title">The Honeyguide's Revenge</div>
+          <img class="pic" src="/images/s11.jpg" />
+          <img class="avatar" src="/images/Avatar.png" />
+          <audio id="1.11">
+            <source src="/sounds/1.11.mp3" />
+          </audio>
+
+          <div
+            id="Q13"
+            style="
+              display: none;
+              width: 30vw;
+              margin-top: 20vw;
+              margin-left: 800px;
+              height: fit-content;
+            "
+            class="multiple"
+          >
+            Now you have heard the story of Ngede. You have learned the lesson
+            too. You have learned to have respect for:
+
+            <br /><span class="choice" onclick="failure(); ">(a) Gingile</span>
+            <br /><span class="choice" onclick="success(); showNext2(); "
+              >(b) The Honeyguide
+            </span>
+          </div>
+          <div class="words">
+            And so, when the children of Gingile hear the
+            <span id="story_word">story of Ngede</span> they have respect for
+            the little bird. Whenever they harvest honey, they make sure to
+            leave the biggest part of the comb for Honeyguide!<span
+              class="doneButton"
+              id="done12"
+              onclick="show('Q13');hide('done12')"
+              >Done
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final slide-->
+      <div class="mySlides fade">
+        <div class="slide" style="text-align: center">
+          <div class="title">The Honeyguide's Revenge</div>
+          <div class="end">The End<br />Thank you for reading!</div>
+          <div class="endWords">
+            Copyright © 2023 Child Phonology Lab <br />Project directed and
+            developed by Susan Rvachew <br />Project developed by Tanya
+            Matthews, Dahlia Thompson, Tory Lackman, Carlos Pérez-Valle, Jessy
+            Burdman-Villa, Yanran Mou <br />Software development by Aritra
+            Banik, Linnea Munro, Muhammad (Anas) Shahid <br />Story by
+            Storybooks Canada <br />Illustrations by Wiehan de Jager
+          </div>
+        </div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="next" id="n2" onclick="plusSlides2(1)">&#10095;</a>
+      <a class="prev" id="p" onclick="plusSlides2(-1)">&#10094;</a>
+    </div>
+
+    <!-- The dots/circles -->
+    <div class="flexCol">
+      <p id="pageNum"></p>
+      <div class="dots" id="c" style="text-align: center">
+        <span id="dot1" class="dot activeDot" onclick="clickSlide(1)"></span>
+        <span id="dot2" class="dot" onclick="clickSlide(2)"></span>
+        <span id="dot3" class="dot" onclick="clickSlide(3)"></span>
+        <span id="dot4" class="dot" onclick="clickSlide(4)"></span>
+        <span id="dot5" class="dot" onclick="clickSlide(5)"></span>
+        <span id="dot6" class="dot" onclick="clickSlide(6)"></span>
+        <span id="dot7" class="dot" onclick="clickSlide(7)"></span>
+        <span id="dot8" class="dot" onclick="clickSlide(8)"></span>
+        <span id="dot9" class="dot" onclick="clickSlide(9)"></span>
+        <span id="dot10" class="dot" onclick="clickSlide(10)"></span>
+        <span id="dot11" class="dot" onclick="clickSlide(11)"></span>
+        <span id="dot12" class="dot" onclick="clickSlide(12)"></span>
+        <span id="dot13" class="dot" onclick="clickSlide(13)"></span>
+        <span id="dot14" class="dot" onclick="clickSlide(14)"></span>
+      </div>
+    </div>
+  </body>
+</html>

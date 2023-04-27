@@ -1,9 +1,11 @@
 var slideIndex = 1;
 var slidesRead = 1;
-showSlides(slideIndex);
+var clickedImages = [];
 var check = 0;
 var check2 = 0;
 var hasIntro = false;
+var dragging = false;
+showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
@@ -18,11 +20,93 @@ function hasIntroTrue() {
   hasIntro = true;
 }
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+function startDrag(e) {
+  // determine event object
+  if (!e) {
+    var e = window.event;
+  }
+  console.log(e);
+  // IE uses srcElement, others use target
+  var targ = e.target ? e.target : e.srcElement;
+  if (targ.className != "multImg") {
+    return;
+  }
+  // calculate event X, Y coordinates
+  offsetX = e.clientX;
+  offsetY = e.clientY;
+
+  // assign default values for top and left properties
+  if (!targ.style.left) {
+    targ.style.left = "0px";
+  }
+  if (!targ.style.top) {
+    targ.style.top = "0px";
+  }
+
+  // calculate integer values for top and left
+  // properties
+  coordX = parseInt(targ.style.left);
+  coordY = parseInt(targ.style.top);
+
+  // move div element
+  document.onmousemove = dragDiv;
+  dragging = true;
+}
+function dragDiv(e, id) {
+  if (dragging) {
+    if (!e) {
+      var e = window.event;
+    }
+    var targ = e.target ? e.target : e.srcElement;
+    if (targ.className != "multImg") {
+      return;
+    }
+    // move div element
+    targ.style.left = e.clientX - offsetX + "px";
+    targ.style.top = e.clientY - offsetY + "px";
+
+    var left = Number(targ.style.left.slice(0, -2));
+    var top = Number(targ.style.top.slice(0, -2));
+    if (left < -80 && left > -160 && top > -40 && top < 40) {
+      play(id);
+      if (id == "success") {
+        showNext2();
+      }
+    }
+    return false;
+  }
+}
+function stopDrag(e) {
+  if (!e) {
+    var e = window.event;
+  }
+  var targ = e.target ? e.target : e.srcElement;
+  if (targ.className != "multImg") {
+    return;
+  }
+  targ.style.left = "0px";
+  targ.style.top = "0px";
+  dragging = false;
+}
+
 // Next/previous for not metacognitive
 function plusSlides2(n) {
   document.querySelectorAll("audio").forEach((el) => el.pause());
   slideIndex += n;
-  console.log(slideIndex);
   slidesRead = Math.max(slidesRead, slideIndex);
   showSlides(slideIndex);
   document.getElementById(`dot${slideIndex}`).classList.add("activeDot");
@@ -47,6 +131,19 @@ function toggle(id) {
 
 function show(id) {
   document.getElementById(id).style.display = "block";
+}
+function showImage(id) {
+  document.getElementById(id).style.filter = "none";
+  var hasFilter = false;
+  document.querySelectorAll(".multImg").forEach((img) => {
+    if (img.style.filter == "brightness(0)") {
+      hasFilter = true;
+    }
+  });
+
+  if (!hasFilter) {
+    showNext2();
+  }
 }
 function showInline(id) {
   document.getElementById(id).style.display = "inline";
@@ -76,7 +173,6 @@ function begin() {
   document.getElementById("n").style.display = "block";
   hide("name");
 }
-
 function begin2() {
   var input = document.getElementById("name");
   if (input.value != "") {
@@ -131,6 +227,15 @@ function showSlides(n) {
     document.getElementById("p").style.display = "block";
   } else {
     document.getElementById("p").style.display = "none";
+  }
+}
+
+function selectCount(e) {
+  if (!clickedImages.includes(e.target.id)) {
+    clickedImages.push(e.target.id);
+  }
+  if (clickedImages.length == 2) {
+    showNext2();
   }
 }
 
