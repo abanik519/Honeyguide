@@ -165,39 +165,12 @@
         </div>
       </div>
 
-      <!-- Third slide -->
+       <!-- Third slide -->
       <div class="mySlides fade">
         <div class="slide">
           <div class="title">The Honeyguide's Revenge</div>
           <img class="pic" src="images/s1.jpg" />
-          <audio id="2.1">
-            <source src="/sounds/MCOG-2/2.1.mp3" />
-          </audio>
           <img class="avatar" src="images/Avatar.png" />
-          <div
-            id="chitik"
-            class="multiple"
-            style="
-              margin-left: 10vw;
-              margin-top: 1vw;
-              height: fit-content;
-              display: none;
-            "
-          >
-            Why does Gingile's mouth water when he hear's the little bird's call
-            "chitik-chitik-chitik"?
-            <br /><span class="choice" onclick="success(); showNext2();"
-              >(a) He knew the bird would lead him to honey.</span
-            >
-            <br /><span class="choice" onclick="failure();"
-              >(b) When he saw the bird in the branches, he also saw the bee
-              hive.</span
-            >
-            <br /><span class="choice" onclick="failure();"
-              >(c) He was not successful in his hunting and was getting
-              hungry.</span
-            >
-          </div>
           <div class="words">
             One day while Gingile was out hunting he heard the call of Ngede.
             Gingile’s mouth began to water at the thought of honey. He stopped
@@ -205,11 +178,13 @@
             branches above his head. “Chitik-chitik-chitik,” the little bird
             rattled, as he flew to the next tree, and the next.
             <span id="chitik_word">“Chitik, chitik, chitik,”</span> he called,
-            stopping from time to time to be sure that Gingile followed.<span
+            stopping from time to time to be sure that Gingile followed.
+            <span
               class="doneButton"
-              id="done1"
-              onclick="show('chitik');hide('done1');highlight('chitik_word');"
-              >Done
+              id="done2"
+              onclick="showNext2();hide('done2')"
+            >
+              Done
             </span>
           </div>
         </div>
